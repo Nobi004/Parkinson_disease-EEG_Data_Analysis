@@ -8,7 +8,7 @@ tqdm
 textwrap3  # optional, only needed if using advanced textwrap features not in stdlib
 
 mne 
-
+keras
 scikit-learn 
 torch 
 FSRLearning
