@@ -14,5 +14,6 @@ torch
 FSRLearning
  
 cupy-cuda12x  # For RTX 4060
+
 numba
 joblib
