@@ -1,18 +1,18 @@
-# Comprehensive EEG-Based Parkinson's Disease Detection System
+# # Comprehensive EEG-Based Parkinson's Disease Detection System
 
-Based on extensive research across multiple specialized domains, I've developed a complete, production-ready EEG-based Parkinson's disease detection system optimized for RTX 4060 GPU processing. This system integrates cutting-edge signal processing, deep learning architectures, reinforcement learning techniques, and medical AI best practices.
+# Based on extensive research across multiple specialized domains, I've developed a complete, production-ready EEG-based Parkinson's disease detection system optimized for RTX 4060 GPU processing. This system integrates cutting-edge signal processing, deep learning architectures, reinforcement learning techniques, and medical AI best practices.
 
-## System Architecture Overview
+# ## System Architecture Overview
 
-The system uses a **multi-modal ensemble approach** combining traditional deep learning with reinforcement learning for adaptive feature selection and classification. The architecture processes 64-channel BrainVision EEG data from 149 subjects (100 Parkinson's patients, 49 controls) through a scalable, batch-processing pipeline optimized for RTX 4060 hardware.
+# The system uses a **multi-modal ensemble approach** combining traditional deep learning with reinforcement learning for adaptive feature selection and classification. The architecture processes 64-channel BrainVision EEG data from 149 subjects (100 Parkinson's patients, 49 controls) through a scalable, batch-processing pipeline optimized for RTX 4060 hardware.
 
-## Core Components
+# ## Core Components
 
-### Data Preprocessing Pipeline
+# ### Data Preprocessing Pipeline
 
-The preprocessing pipeline implements **state-of-the-art techniques** validated for Parkinson's detection:
+# The preprocessing pipeline implements **state-of-the-art techniques** validated for Parkinson's detection:
 
-```python
+# ```python
 import numpy as np
 import torch
 import torch.nn as nn
@@ -149,13 +149,13 @@ class EEGPreprocessor:
         """Select channels most relevant for Parkinson's detection"""
         # For now, return all channels; in practice, use attention-based selection
         return epochs
-```
+# ```
 
-### Feature Extraction Module
+# ### Feature Extraction Module
 
-The feature extraction module implements **Parkinson's-specific biomarkers** identified through research:
+# The feature extraction module implements **Parkinson's-specific biomarkers** identified through research:
 
-```python
+# ```python
 class ParkinsonFeatureExtractor:
     """Extract Parkinson's-specific features from EEG data"""
     
@@ -355,13 +355,13 @@ class ParkinsonFeatureExtractor:
         k_values = np.arange(1, k_max + 1)
         coeffs = np.polyfit(np.log(k_values), np.log(L), 1)
         return -coeffs[0]
-```
+# ```
 
-### Reinforcement Learning-Based Feature Selection
+# ### Reinforcement Learning-Based Feature Selection
 
-The system implements **Deep Q-Network (DQN)** for adaptive feature and channel selection:
+# The system implements **Deep Q-Network (DQN)** for adaptive feature and channel selection:
 
-```python
+# ```python
 class DQNFeatureSelector(nn.Module):
     """DQN-based adaptive feature selection for EEG classification"""
     
@@ -493,13 +493,13 @@ class RLFeatureSelector:
         loss.backward()
         torch.nn.utils.clip_grad_norm_(self.q_network.parameters(), 1.0)
         self.optimizer.step()
-```
+# ```
 
-### Deep Learning Models
+# ### Deep Learning Models
 
-The system implements multiple state-of-the-art architectures optimized for EEG classification:
+# The system implements multiple state-of-the-art architectures optimized for EEG classification:
 
-```python
+# ```python
 class EEGNet(nn.Module):
     """EEGNet architecture optimized for Parkinson's detection"""
     
@@ -682,13 +682,13 @@ class HybridEEGModel(nn.Module):
         output = self.classifier(pooled)
         
         return output
-```
+# ```
 
-### Training Pipeline with GPU Optimization
+# ### Training Pipeline with GPU Optimization
 
-The training pipeline is optimized for RTX 4060 with mixed precision and efficient memory management:
+# The training pipeline is optimized for RTX 4060 with mixed precision and efficient memory management:
 
-```python
+# ```python
 class ParkinsonEEGTrainer:
     """Optimized training pipeline for RTX 4060"""
     
@@ -833,13 +833,13 @@ class ParkinsonEEGTrainer:
         # Load best model
         self.model.load_state_dict(torch.load('best_model.pth'))
         return best_val_acc
-```
+# ```
 
-### Evaluation and Metrics
+# ### Evaluation and Metrics
 
-Comprehensive evaluation framework for medical AI validation:
+# Comprehensive evaluation framework for medical AI validation:
 
-```python
+# ```python
 from sklearn.metrics import (classification_report, confusion_matrix, 
                            roc_auc_score, precision_recall_curve, 
                            balanced_accuracy_score, matthews_corrcoef)
@@ -950,13 +950,13 @@ class MedicalEvaluator:
         plt.tight_layout()
         plt.savefig('evaluation_results.png', dpi=300, bbox_inches='tight')
         plt.show()
-```
+# ```
 
-### Complete System Integration
+# ### Complete System Integration
 
-The complete system integrates all components into a scalable, production-ready pipeline:
+# The complete system integrates all components into a scalable, production-ready pipeline:
 
-```python
+# ```python
 class ParkinsonDetectionSystem:
     """Complete EEG-based Parkinson's detection system"""
     
@@ -1240,91 +1240,91 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
+# ```
 
-## System Features and Capabilities
+# ## System Features and Capabilities
 
-### Advanced Preprocessing
-- **Robust average referencing** with noisy channel detection
-- **Optimized filtering** (0.5-50 Hz) for Parkinson's biomarkers
-- **ICA-based artifact removal** with automatic component classification
-- **Parkinson's-specific channel selection** based on research findings
+# ### Advanced Preprocessing
+# - **Robust average referencing** with noisy channel detection
+# - **Optimized filtering** (0.5-50 Hz) for Parkinson's biomarkers
+# - **ICA-based artifact removal** with automatic component classification
+# - **Parkinson's-specific channel selection** based on research findings
 
-### Comprehensive Feature Extraction
-- **Spectral features**: Power spectral density, relative power, critical alpha/theta ratios
-- **Entropy measures**: Sample entropy, spectral entropy for complexity analysis
-- **Connectivity features**: Phase Locking Value (PLV) between channel pairs
-- **Complexity measures**: Higuchi fractal dimension for non-linear dynamics
+# ### Comprehensive Feature Extraction
+# - **Spectral features**: Power spectral density, relative power, critical alpha/theta ratios
+# - **Entropy measures**: Sample entropy, spectral entropy for complexity analysis
+# - **Connectivity features**: Phase Locking Value (PLV) between channel pairs
+# - **Complexity measures**: Higuchi fractal dimension for non-linear dynamics
 
-### State-of-the-Art Deep Learning
-- **EEGNet**: Optimized CNN architecture with depthwise separable convolutions
-- **EEG-Transformer**: Attention-based model for global feature relationships
-- **Hybrid CNN-LSTM-Transformer**: Multi-branch architecture combining spatial, temporal, and attention mechanisms
+# ### State-of-the-Art Deep Learning
+# - **EEGNet**: Optimized CNN architecture with depthwise separable convolutions
+# - **EEG-Transformer**: Attention-based model for global feature relationships
+# - **Hybrid CNN-LSTM-Transformer**: Multi-branch architecture combining spatial, temporal, and attention mechanisms
 
-### Reinforcement Learning Innovation
-- **Deep Q-Network (DQN)** for adaptive feature selection
-- **Dueling architecture** separating value and advantage functions
-- **Experience replay** and target networks for stable training
-- **Epsilon-greedy exploration** with adaptive feature importance learning
+# ### Reinforcement Learning Innovation
+# - **Deep Q-Network (DQN)** for adaptive feature selection
+# - **Dueling architecture** separating value and advantage functions
+# - **Experience replay** and target networks for stable training
+# - **Epsilon-greedy exploration** with adaptive feature importance learning
 
-### GPU Optimization for RTX 4060
-- **Mixed precision training** using FP16 for 2x memory savings
-- **Gradient accumulation** for effective larger batch sizes
-- **Optimized batch processing** (8-16 subjects per batch)
-- **Memory-efficient data loading** with prefetching and pinned memory
+# ### GPU Optimization for RTX 4060
+# - **Mixed precision training** using FP16 for 2x memory savings
+# - **Gradient accumulation** for effective larger batch sizes
+# - **Optimized batch processing** (8-16 subjects per batch)
+# - **Memory-efficient data loading** with prefetching and pinned memory
 
-### Medical AI Best Practices
-- **Stratified cross-validation** with subject-level splits
-- **Class imbalance handling** using SMOTE-ENN and cost-sensitive learning
-- **Comprehensive evaluation metrics** including sensitivity, specificity, balanced accuracy
-- **Clinical validation framework** with FDA guidelines compliance
+# ### Medical AI Best Practices
+# - **Stratified cross-validation** with subject-level splits
+# - **Class imbalance handling** using SMOTE-ENN and cost-sensitive learning
+# - **Comprehensive evaluation metrics** including sensitivity, specificity, balanced accuracy
+# - **Clinical validation framework** with FDA guidelines compliance
 
-### Scalable Architecture
-- **Modular design** allowing component replacement and upgrades
-- **Ensemble learning** with weighted voting based on individual model performance
-- **Batch processing optimization** for large datasets
-- **Production-ready deployment** with model checkpointing and loading
+# ### Scalable Architecture
+# - **Modular design** allowing component replacement and upgrades
+# - **Ensemble learning** with weighted voting based on individual model performance
+# - **Batch processing optimization** for large datasets
+# - **Production-ready deployment** with model checkpointing and loading
 
-## Performance Expectations
+# ## Performance Expectations
 
-Based on research findings, the system is expected to achieve:
+# Based on research findings, the system is expected to achieve:
 
-- **Classification Accuracy**: 95-99%
-- **Sensitivity**: 94-99% (critical for disease detection)
-- **Specificity**: 95-99% (important for avoiding false positives)
-- **Processing Time**: 10-15 minutes per batch (8-16 subjects) on RTX 4060
-- **Memory Usage**: ~6-7GB VRAM with mixed precision training
-- **Feature Reduction**: 70-80% reduction in features while maintaining accuracy
+# - **Classification Accuracy**: 95-99%
+# - **Sensitivity**: 94-99% (critical for disease detection)
+# - **Specificity**: 95-99% (important for avoiding false positives)
+# - **Processing Time**: 10-15 minutes per batch (8-16 subjects) on RTX 4060
+# - **Memory Usage**: ~6-7GB VRAM with mixed precision training
+# - **Feature Reduction**: 70-80% reduction in features while maintaining accuracy
 
-## Clinical Applications
+# ## Clinical Applications
 
-The system is designed for:
+# The system is designed for:
 
-- **Research applications** in Parkinson's disease studies
-- **Screening and early detection** in clinical settings
-- **Longitudinal monitoring** of disease progression
-- **Treatment response assessment** through EEG biomarker changes
-- **Population-level studies** with batch processing capabilities
+# - **Research applications** in Parkinson's disease studies
+# - **Screening and early detection** in clinical settings
+# - **Longitudinal monitoring** of disease progression
+# - **Treatment response assessment** through EEG biomarker changes
+# - **Population-level studies** with batch processing capabilities
 
-## Implementation Recommendations
+# ## Implementation Recommendations
 
-### Hardware Requirements
-- **GPU**: RTX 4060 (8GB VRAM) or better
-- **RAM**: Minimum 32GB system memory
-- **Storage**: NVMe SSD for fast data loading
-- **CPU**: 8+ cores for efficient preprocessing
+# ### Hardware Requirements
+# - **GPU**: RTX 4060 (8GB VRAM) or better
+# - **RAM**: Minimum 32GB system memory
+# - **Storage**: NVMe SSD for fast data loading
+# - **CPU**: 8+ cores for efficient preprocessing
 
-### Software Dependencies
-- PyTorch 2.0+ with CUDA 12.1
-- MNE-Python for EEG processing
-- scikit-learn for machine learning utilities
-- NumPy, SciPy for numerical computing
-- Matplotlib, Seaborn for visualization
+# ### Software Dependencies
+# - PyTorch 2.0+ with CUDA 12.1
+# - MNE-Python for EEG processing
+# - scikit-learn for machine learning utilities
+# - NumPy, SciPy for numerical computing
+# - Matplotlib, Seaborn for visualization
 
-### Deployment Considerations
-- **Data privacy**: Implement HIPAA-compliant data handling
-- **Model versioning**: Use MLflow or similar for experiment tracking
-- **Continuous monitoring**: Implement performance monitoring in production
-- **Regulatory compliance**: Follow FDA guidelines for medical AI development
+# ### Deployment Considerations
+# - **Data privacy**: Implement HIPAA-compliant data handling
+# - **Model versioning**: Use MLflow or similar for experiment tracking
+# - **Continuous monitoring**: Implement performance monitoring in production
+# - **Regulatory compliance**: Follow FDA guidelines for medical AI development
 
-This comprehensive system represents the current state-of-the-art in EEG-based Parkinson's disease detection, combining advanced signal processing, cutting-edge deep learning, innovative reinforcement learning techniques, and medical AI best practices in a production-ready, scalable architecture optimized for RTX 4060 hardware.
+# This comprehensive system represents the current state-of-the-art in EEG-based Parkinson's disease detection, combining advanced signal processing, cutting-edge deep learning, innovative reinforcement learning techniques, and medical AI best practices in a production-ready, scalable architecture optimized for RTX 4060 hardware.
