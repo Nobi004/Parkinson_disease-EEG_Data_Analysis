@@ -496,27 +496,27 @@ class Visualizer:
         n_models = len(results)
         cols = min(3, n_models)
         rows = (n_models + cols - 1) // cols
-        
+
         fig, axes = plt.subplots(rows, cols, figsize=(5*cols, 4*rows))
+        # Always flatten axes for consistent indexing
         if n_models == 1:
-            axes = [axes]
-        elif rows == 1:
-            axes = [axes]
+            axes = np.array([axes])
+        elif rows == 1 or cols == 1:
+            axes = axes.flatten()
         else:
             axes = axes.flatten()
-        
+
         for i, (model_name, metrics) in enumerate(results.items()):
             cm = metrics['confusion_matrix']
-            
             sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=axes[i])
             axes[i].set_title(f'{model_name}\nAccuracy: {metrics["accuracy"]:.3f}')
             axes[i].set_xlabel('Predicted')
             axes[i].set_ylabel('Actual')
-        
+
         # Hide empty subplots
         for i in range(n_models, len(axes)):
             axes[i].set_visible(False)
-        
+
         plt.tight_layout()
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
